@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Industry Intent",
+  "type": "object",
+  "required": ["intentId", "name"],
+  "properties": {
+    "intentId": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "industry": { "type": "string" },
+    "examples": { "type": "array", "items": { "type": "string" } },
+    "priority": { "type": "number" },
+    "metadata": { "type": "object" }
+  },
+  "additionalProperties": true
+}

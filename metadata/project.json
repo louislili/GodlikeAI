@@ -1,0 +1,16 @@
+{
+  "name": "godlike ai",
+  "description": "让机器像神一样思考",
+  "openSource": true,
+  "categories": [
+    "workflows",
+    "agents",
+    "coze",
+    "defi"
+  ],
+  "defaultWorkflow": "多意图路由问答",
+  "links": {
+    "website": "https://yigather.com/",
+    "douyin": "https://www.douyin.com/user/MS4wLjABAAAARyKh_W-ahMmF08jLosvVbXFNfW57rklTDcFTyrgWfKr53T71f7JGLjNq5tQBGvw6?from_tab_name=main&vid=7395772480226463013"
+  }
+}
