@@ -8,7 +8,7 @@
   <a href="https://github.com/louislili/GodlikeAI/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
 </p>
 
-# Godlike AI
+# GODlikeAI
 
 让机器像神一样思考
 
@@ -59,6 +59,7 @@
 - `fastgpt/口碑拆句` — 长评拆分为句子数组；文件：`workflows/fastgpt/口碑拆句.json` · `workflows/fastgpt/口碑拆句.md`
 - `fastgpt/口碑单句打标签` — 情感/主题/风险/实体打标；文件：`workflows/fastgpt/口碑单句打标签.json` · `workflows/fastgpt/口碑单句打标签.md`
 - `fastgpt/口碑数据分析助手` — 指标与洞察生成；文件：`workflows/fastgpt/口碑数据分析助手.json` · `workflows/fastgpt/口碑数据分析助手.md`
+- `Dify/Agent Kimi` — 多循环意图智能体（规划—执行—反思闭环）；文件：`workflows/Dify/Agent Kimi.yml` · `workflows/Dify/Agent Kimi.md`
 
 ## 交流与支持
 - 问题与建议：在 GitHub `Issues` 提交（按模块清晰描述场景与期望）。

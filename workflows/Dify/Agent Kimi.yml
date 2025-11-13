@@ -1,0 +1,1457 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: Agent Kimi
+  use_icon_as_answer_icon: true
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/volcengine_maas:0.0.24@d99937d2f1cef247df06e0341558416c768b31bd820af745d2db41d0a5c32a46
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables:
+  - description: ''
+    id: c257483b-3689-4111-a269-c8d06f5348bf
+    name: results
+    selector:
+    - conversation
+    - results
+    value: ' '
+    value_type: string
+  - description: ''
+    id: 64301059-bbe2-41dc-9067-140248d30430
+    name: current_index
+    selector:
+    - conversation
+    - current_index
+    value: 0
+    value_type: number
+  - description: ''
+    id: 6e1d34ef-3881-4571-b09b-db57b6082556
+    name: index
+    selector:
+    - conversation
+    - index
+    value: 0
+    value_type: number
+  - description: ''
+    id: cb93dd8c-2250-4a63-bfa7-70b9a69a6bce
+    name: todo_current
+    selector:
+    - conversation
+    - todo_current
+    value: ''
+    value_type: string
+  - description: ''
+    id: 84b64610-6cc1-4546-847b-7e5d65ce201a
+    name: todo
+    selector:
+    - conversation
+    - todo
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        sourceType: start
+        targetType: llm
+      id: 1751422875348-llm
+      selected: false
+      source: '1751422875348'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: llm-source-1751522682075-target
+      selected: false
+      source: llm
+      sourceHandle: source
+      target: '1751522682075'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: llm
+        targetType: assigner
+      id: 1751523429685-source-1751523836967-target
+      selected: false
+      source: '1751523429685'
+      sourceHandle: source
+      target: '1751523836967'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: llm
+        targetType: assigner
+      id: 1751524099101-source-1751524107351-target
+      selected: false
+      source: '1751524099101'
+      sourceHandle: source
+      target: '1751524107351'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: llm-source-1751525310469-target
+      selected: false
+      source: llm
+      sourceHandle: source
+      target: '1751525310469'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: llm
+        targetType: assigner
+      id: 1751525515841-source-1751525653369-target
+      selected: false
+      source: '1751525515841'
+      sourceHandle: source
+      target: '1751525653369'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: assigner
+        targetType: assigner
+      id: 1751524107351-source-1751526035661-target
+      selected: false
+      source: '1751524107351'
+      sourceHandle: source
+      target: '1751526035661'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: assigner
+        targetType: llm
+      id: 1751526035661-source-1751526098026-target
+      selected: false
+      source: '1751526035661'
+      sourceHandle: source
+      target: '1751526098026'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: llm
+        targetType: assigner
+      id: 1751526098026-source-1751526145689-target
+      selected: false
+      source: '1751526098026'
+      sourceHandle: source
+      target: '1751526145689'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: question-classifier
+        targetType: loop-end
+      id: 1751522848183-1751522885566-1751526378487-target
+      selected: false
+      source: '1751522848183'
+      sourceHandle: '1751522885566'
+      target: '1751526378487'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: question-classifier
+        targetType: code
+      id: 1751522848183-2-1751527454792-target
+      selected: false
+      source: '1751522848183'
+      sourceHandle: '2'
+      target: '1751527454792'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: code
+        targetType: assigner
+      id: 1751527454792-source-1751527513560-target
+      selected: false
+      source: '1751527454792'
+      sourceHandle: source
+      target: '1751527513560'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: assigner
+        targetType: code
+      id: 1751527513560-source-1751529448803-target
+      selected: false
+      source: '1751527513560'
+      sourceHandle: source
+      target: '1751529448803'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: code
+        targetType: assigner
+      id: 1751529448803-source-1751529520809-target
+      selected: false
+      source: '1751529448803'
+      sourceHandle: source
+      target: '1751529520809'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: 1751525310469-source-1751529769016-target
+      selected: false
+      source: '1751525310469'
+      sourceHandle: source
+      target: '1751529769016'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: loop
+      id: 1751529769016-source-1751521969205-target
+      selected: false
+      source: '1751529769016'
+      sourceHandle: source
+      target: '1751521969205'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: assigner
+      id: 1751522682075-source-1751529769016-target
+      selected: false
+      source: '1751522682075'
+      sourceHandle: source
+      target: '1751529769016'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: assigner
+        targetType: llm
+      id: 1751523836967-source-1751525515841-target
+      selected: false
+      source: '1751523836967'
+      sourceHandle: source
+      target: '1751525515841'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: assigner
+        targetType: question-classifier
+      id: 1751525653369-source-1751522848183-target
+      selected: false
+      source: '1751525653369'
+      sourceHandle: source
+      target: '1751522848183'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: loop-start
+        targetType: agent
+      id: 1751521969205start-source-1751540914112-target
+      selected: false
+      source: 1751521969205start
+      sourceHandle: source
+      target: '1751540914112'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        sourceType: agent
+        targetType: llm
+      id: 1751540914112-source-1751523429685-target
+      selected: false
+      source: '1751540914112'
+      sourceHandle: source
+      target: '1751523429685'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: loop
+        targetType: llm
+      id: 1751521969205-source-1751526429735-target
+      selected: false
+      source: '1751521969205'
+      sourceHandle: source
+      target: '1751526429735'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1751526429735-source-1751526459903-target
+      selected: false
+      source: '1751526429735'
+      sourceHandle: source
+      target: '1751526459903'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 54
+      id: '1751422875348'
+      position:
+        x: 30
+        y: 438
+      positionAbsolute:
+        x: 30
+        y: 438
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '用户输入：{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 10
+        model:
+          completion_params: {}
+          mode: chat
+          name: Kimi-K2
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: bef66bcb-0ca6-4b92-bb4d-4f3ea30522bf
+          role: system
+          text: "```xml\n<instruction>\n1. 任务目标：基于当前用户意图，选择性结合上下文，根据用户输入生成一个清晰、可操作的任务分解事项列表，核心的目的是以任务规划分解的来系统性的完成用户的诉求和目标。并支持后续通过打勾（✓）来更新任务状态。\n\
+            2. 输入要求：用户提供待办事项的文本描述，可以是单个任务或多个任务（用分号或换行分隔）。\n3. 处理步骤：\n   - 解析输入文本，将每个任务拆分为独立的条目。\n\
+            \   - 为每个任务生成一个标准化的待办事项格式，包含任务描述和未完成状态标记（[ ]）。\n   - 确保生成的列表易于阅读和编辑，支持后续手动打勾（将[\
+            \ ]改为[✓]）。\n   - 输出纯文本，不包含任何XML或HTML标签。\n4. 输出格式：\n   - 每个任务单独一行，格式为：[\
+            \ ] 任务描述。\n   - 任务顺序与输入一致，不额外排序。\n5. 注意事项：\n   - 若输入包含优先级或时间信息，保留在原任务描述中，不额外处理。\n\
+            \   - 不自动添加完成状态（始终以[ ]开头）。\n</instruction>\n\n<examples>\n<example>\n\
+            输入：购买 groceries; 完成项目报告; 预约医生\n输出：\n[ ] 购买 groceries\n[ ] 完成项目报告\n[ ]\
+            \ 预约医生\n</example>\n\n<example>\n输入：周一前提交预算表\\n检查团队OKR进度\\n18:00健身房\n\
+            输出：\n[ ] 周一前提交预算表\n[ ] 检查团队OKR进度\n[ ] 18:00健身房\n</example>\n\n<example>\n\
+            输入：高优先级：客户提案修改（紧急）；整理会议纪要\n输出：\n[ ] 高优先级：客户提案修改（紧急）\n[ ] 整理会议纪要\n</example>\n\
+            </examples>\n\n--成本控制：必须满足用户的核心需求。一定是核心需求，而不是延展需求！如果两步能搞定的就不要设计三步，三步能搞定的就不要设计5步。整个运行过程建议低于5步。\n\
+            \n<additional_guidance>\n1. 简洁性：任务描述需精简，但保留所有关键信息（如时间、优先级等）。\n2. 符号统一：使用半角方括号和空格（[\
+            \ ]），确保兼容性。\n3. 特殊字符：若输入包含emoji或特殊符号，直接保留不转换。\n</additional_guidance>\n\
+            ```\n\n用户输入：{{#sys.query#}}"
+        selected: false
+        structured_output_enabled: false
+        title: LLM-todo
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: llm
+      position:
+        x: 334.8773357034404
+        y: 438
+      positionAbsolute:
+        x: 334.8773357034404
+        y: 438
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        break_conditions:
+        - comparison_operator: ≥
+          id: cfc6f144-2304-4706-b570-d34233f4bcf4
+          numberVarType: variable
+          value: '{{#conversation.index#}}'
+          varType: number
+          variable_selector:
+          - conversation
+          - current_index
+        desc: ''
+        error_handle_mode: terminated
+        height: 734
+        logical_operator: and
+        loop_count: 10
+        loop_variables:
+        - id: 06bd77ba-7e05-46a7-be03-f9d0a8dd245b
+          label: index
+          value:
+          - conversation
+          - index
+          value_type: variable
+          var_type: number
+        selected: false
+        start_node_id: 1751521969205start
+        title: 循环
+        type: loop
+        width: 3876
+      height: 734
+      id: '1751521969205'
+      position:
+        x: 1306.009758524584
+        y: 1261.7386867427188
+      positionAbsolute:
+        x: 1306.009758524584
+        y: 1261.7386867427188
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 3876
+      zIndex: 1
+    - data:
+        desc: ''
+        isInLoop: true
+        selected: false
+        title: ''
+        type: loop-start
+      draggable: false
+      height: 48
+      id: 1751521969205start
+      parentId: '1751521969205'
+      position:
+        x: 60
+        y: 81
+      positionAbsolute:
+        x: 1366.009758524584
+        y: 1342.7386867427188
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-loop-start
+      width: 44
+      zIndex: 1002
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - llm
+          - text
+          variable_selector:
+          - conversation
+          - todo
+          write_mode: over-write
+        selected: false
+        title: 变量赋值
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751522682075'
+      position:
+        x: 638
+        y: 438
+      positionAbsolute:
+        x: 638
+        y: 438
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        classes:
+        - id: '2'
+          name: 继续执行下一步todo项
+        - id: '1751522885566'
+          name: 跳出todo过程
+        desc: ''
+        instruction: '基于任务todo规划，完成进度进行意图完成度总结，判断下一步该干啥。
+
+
+          --用户输入：
+
+          {{#sys.query#}}
+
+          --任务拆解规划todo：
+
+          {{#conversation.todo#}}
+
+          --当前步骤的完成情况：
+
+          {{#conversation.todo_current#}}
+
+
+
+          '
+        instructions: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: DeepSeek-V3-0324
+          provider: langgenius/volcengine_maas/volcengine_maas
+        query_variable_selector:
+        - '1751422875348'
+        - sys.query
+        selected: false
+        title: 问题分类器
+        topics: []
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 172
+      id: '1751522848183'
+      parentId: '1751521969205'
+      position:
+        x: 1112.0000000000002
+        y: 317.36399677909674
+      positionAbsolute:
+        x: 2418.009758524584
+        y: 1579.1026835218154
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: DeepSeek-V3-0324
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: ec8b8557-ec08-4b1d-ad6d-e562d8b2de89
+          role: system
+          text: '--基于任务执行情况更新当前的todo_current,保留原来的todo格式,只要做完了就打对勾
+
+            --已经打对勾的不要再动了，你主要关注没有打对勾的，完成了
+
+            <原始todo>{{#conversation.todo_current#}}</原始todo>
+
+            <最新一步任务执行情况todo_current>
+
+            {{#1751540914112.text#}}
+
+            </最新一步任务执行情况todo_current>'
+        selected: false
+        title: update_todo_current
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1751523429685'
+      parentId: '1751521969205'
+      position:
+        x: 808
+        y: 65
+      positionAbsolute:
+        x: 2114.009758524584
+        y: 1326.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751523429685'
+          - text
+          variable_selector:
+          - conversation
+          - todo_current
+          write_mode: over-write
+        loop_id: '1751521969205'
+        selected: false
+        title: 变量赋值 2
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751523836967'
+      parentId: '1751521969205'
+      position:
+        x: 1112
+        y: 61
+      positionAbsolute:
+        x: 2418.009758524584
+        y: 1322.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: DeepSeek-V3-0324
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: 4aa29d81-6c33-4ac1-bb7d-f6abf22e6d72
+          role: system
+          text: "基于用户意图，反思当前的todo执行不到位的问题，并重新规划todo\n\n\n\n--用户输入：\n{{#sys.query#}}\n\
+            --任务拆解规划todo：\n{{#conversation.todo#}}\n--当前步骤的完成情况：\n{{#conversation.todo_current#}}\n\
+            \n\n\n```xml\n<instruction>\n1. 任务目标：根据用户输入生成一个清晰、可操作的任务分解事项列表，核心的目的是以任务规划分解的来系统性的完成用户的诉求和目标。并支持后续通过打勾（✓）来更新任务状态。\n\
+            2. 输入要求：用户提供待办事项的文本描述，可以是单个任务或多个任务（用分号或换行分隔）。\n3. 处理步骤：\n   - 解析输入文本，将每个任务拆分为独立的条目。\n\
+            \   - 为每个任务生成一个标准化的待办事项格式，包含任务描述和未完成状态标记（[ ]）。\n   - 确保生成的列表易于阅读和编辑，支持后续手动打勾（将[\
+            \ ]改为[✓]）。\n   - 输出纯文本，不包含任何XML或HTML标签。\n4. 输出格式：\n   - 每个任务单独一行，格式为：[\
+            \ ] 任务描述。\n   - 任务顺序与输入一致，不额外排序。\n5. 注意事项：\n   - 若输入包含优先级或时间信息，保留在原任务描述中，不额外处理。\n\
+            \   - 不自动添加完成状态（始终以[ ]开头）。\n</instruction>\n\n<examples>\n<example>\n\
+            输入：购买 groceries; 完成项目报告; 预约医生\n输出：\n[ ] 购买 groceries\n[ ] 完成项目报告\n[ ]\
+            \ 预约医生\n</example>\n\n<example>\n输入：周一前提交预算表\\n检查团队OKR进度\\n18:00健身房\n\
+            输出：\n[ ] 周一前提交预算表\n[ ] 检查团队OKR进度\n[ ] 18:00健身房\n</example>\n\n<example>\n\
+            输入：高优先级：客户提案修改（紧急）；整理会议纪要\n输出：\n[ ] 高优先级：客户提案修改（紧急）\n[ ] 整理会议纪要\n</example>\n\
+            </examples>\n\n<additional_guidance>\n1. 简洁性：任务描述需精简，但保留所有关键信息（如时间、优先级等）。\n\
+            2. 符号统一：使用半角方括号和空格（[ ]），确保兼容性。\n3. 特殊字符：若输入包含emoji或特殊符号，直接保留不转换。\n4. 错误处理：若输入为空，返回提示：\"\
+            无有效待办事项输入\"。\n</additional_guidance>\n```"
+        - id: 911193a4-8894-478c-a11f-0514d7a205c9
+          role: user
+          text: '{{#sys.query#}}'
+        selected: false
+        title: 重新规划
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1751524099101'
+      parentId: '1751521969205'
+      position:
+        x: 1416
+        y: 379
+      positionAbsolute:
+        x: 2722.009758524584
+        y: 1640.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: constant
+          operation: set
+          value: 1
+          variable_selector:
+          - conversation
+          - current_index
+          write_mode: over-write
+        loop_id: '1751521969205'
+        selected: false
+        title: 变量赋值 4
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751524107351'
+      parentId: '1751521969205'
+      position:
+        x: 1720
+        y: 378.96838995709516
+      positionAbsolute:
+        x: 3026.009758524584
+        y: 1640.707076699814
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: Kimi-K2
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: adddd720-a032-4870-a547-3a96b6eb6017
+          role: system
+          text: '判断一下当前的todo一共需要完成几步，有几个需要填充项目，就是几步
+
+            --禁止输出代码块包裹
+
+            --todo:{{#conversation.todo#}}'
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              index:
+                description: 步数
+                type: number
+            required: []
+            type: object
+        structured_output_enabled: true
+        title: LLM 5
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1751525310469'
+      position:
+        x: 638
+        y: 566
+      positionAbsolute:
+        x: 638
+        y: 566
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        model:
+          completion_params: {}
+          mode: chat
+          name: Doubao-1.5-pro-32k
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: 9de47da8-734d-4af4-922d-8b0ea3cc652b
+          role: system
+          text: '基于todo计算当前执行到了哪一步，完成了几个对勾，就代表进行到了第几步，从1开始
+
+
+            <todo>
+
+            {{#conversation.todo_current#}}
+
+            </todo>
+
+            '
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              current_index:
+                type: number
+            required: []
+            type: object
+        structured_output_enabled: true
+        title: 计算步数
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1751525515841'
+      parentId: '1751521969205'
+      position:
+        x: 1113.5484684102103
+        y: 188.22576579489498
+      positionAbsolute:
+        x: 2419.558226934794
+        y: 1449.9644525376139
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751525515841'
+          - structured_output
+          - current_index
+          variable_selector:
+          - conversation
+          - current_index
+          write_mode: over-write
+        loop_id: '1751521969205'
+        selected: false
+        title: 变量赋值 5
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751525653369'
+      parentId: '1751521969205'
+      position:
+        x: 1416
+        y: 190
+      positionAbsolute:
+        x: 2722.009758524584
+        y: 1451.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751524099101'
+          - text
+          variable_selector:
+          - conversation
+          - todo
+          write_mode: over-write
+        loop_id: '1751521969205'
+        selected: false
+        title: 变量赋值 6
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751526035661'
+      parentId: '1751521969205'
+      position:
+        x: 2024
+        y: 380
+      positionAbsolute:
+        x: 3330.009758524584
+        y: 1641.7386867427188
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        model:
+          completion_params:
+            max_tokens: 12288
+          mode: chat
+          name: Doubao-1.5-pro-32k
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: d3aa7dbd-5d56-49f6-8718-49da6ba19438
+          role: system
+          text: '判断一下当前的todo一共需要完成几步，有几个需要填充项目，就是几步
+
+
+            --todo:{{#conversation.todo#}}'
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              index:
+                type: number
+            required:
+            - index
+            type: object
+        structured_output_enabled: true
+        title: LLM 7
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1751526098026'
+      parentId: '1751521969205'
+      position:
+        x: 2328
+        y: 379
+      positionAbsolute:
+        x: 3634.009758524584
+        y: 1640.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751526098026'
+          - structured_output
+          - index
+          variable_selector:
+          - conversation
+          - index
+          write_mode: over-write
+        loop_id: '1751521969205'
+        selected: false
+        title: 变量赋值 7
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751526145689'
+      parentId: '1751521969205'
+      position:
+        x: 2632
+        y: 380
+      positionAbsolute:
+        x: 3938.009758524584
+        y: 1641.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        selected: false
+        title: 退出循环
+        type: loop-end
+      height: 54
+      id: '1751526378487'
+      parentId: '1751521969205'
+      position:
+        x: 1416
+        y: 509
+      positionAbsolute:
+        x: 2722.009758524584
+        y: 1770.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-simple
+      width: 244
+      zIndex: 1002
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - sys
+          - query
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 10
+        model:
+          completion_params:
+            max_tokens: 32000
+          mode: chat
+          name: Kimi-K2
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: fdc2352e-4de7-43fc-a833-c60e418c7ef7
+          role: system
+          text: '理解用户意图、todo规划清单和todo完整结果的内容，系统化地相应用户意图。
+
+
+            --当前用户最新意图：{{#sys.query#}}
+
+
+            <基于用户意图的todo规划清单>{{#llm.text#}}</基于用户意图的todo规划清单>
+
+
+            <基于用户意图规划清单的todo完成结果>{{#conversation.results#}}</基于用户意图规划清单todo完成结果>'
+        - id: be5079f2-c7b8-46d2-ac5a-fb1f483d3fb6
+          role: user
+          text: '{{#sys.query#}}'
+        selected: false
+        title: LLM 8
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1751526429735'
+      position:
+        x: 5482
+        y: 566
+      positionAbsolute:
+        x: 5482
+        y: 566
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1751526429735.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 105
+      id: '1751526459903'
+      position:
+        x: 6559.838328843462
+        y: 661.8999876005772
+      positionAbsolute:
+        x: 6559.838328843462
+        y: 661.8999876005772
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "\nfunction main({arg1, arg2,index}) {\n    return {\n        result:\
+          \ arg1 +'<第'+ index +'个todo执行结果>' + arg2  +'</第'+ index +'个todo执行结果>' \n\
+          \    }\n}\n"
+        code_language: javascript
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 继续工作-代码执行
+        type: code
+        variables:
+        - value_selector:
+          - conversation
+          - results
+          variable: arg1
+        - value_selector:
+          - '1751540914112'
+          - text
+          variable: arg2
+        - value_selector:
+          - conversation
+          - current_index
+          variable: index
+      height: 54
+      id: '1751527454792'
+      parentId: '1751521969205'
+      position:
+        x: 1416
+        y: 603
+      positionAbsolute:
+        x: 2722.009758524584
+        y: 1864.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751527454792'
+          - result
+          variable_selector:
+          - conversation
+          - results
+          write_mode: over-write
+        loop_id: '1751521969205'
+        selected: false
+        title: 变量赋值 10
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751527513560'
+      parentId: '1751521969205'
+      position:
+        x: 1720
+        y: 586
+      positionAbsolute:
+        x: 3026.009758524584
+        y: 1847.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        code: "\ndef main(arg1: str) -> dict:\n    return {\n        \"result\": arg1\
+          \ + 1 ,\n    }\n"
+        code_language: python3
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 代码执行 2
+        type: code
+        variables:
+        - value_selector:
+          - conversation
+          - current_index
+          variable: arg1
+      height: 54
+      id: '1751529448803'
+      parentId: '1751521969205'
+      position:
+        x: 2024
+        y: 603
+      positionAbsolute:
+        x: 3330.009758524584
+        y: 1864.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751529448803'
+          - result
+          variable_selector:
+          - conversation
+          - current_index
+          write_mode: over-write
+        loop_id: '1751521969205'
+        selected: false
+        title: 变量赋值 8
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751529520809'
+      parentId: '1751521969205'
+      position:
+        x: 2328
+        y: 586
+      positionAbsolute:
+        x: 3634.009758524584
+        y: 1847.7386867427188
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751525310469'
+          - structured_output
+          - index
+          variable_selector:
+          - conversation
+          - index
+          write_mode: over-write
+        selected: false
+        title: 变量赋值 9
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1751529769016'
+      position:
+        x: 942
+        y: 567
+      positionAbsolute:
+        x: 942
+        y: 567
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        agent_parameters:
+          instruction:
+            type: constant
+            value: '你需要遵照用户的原始意图，进行当前todo的第{{#conversation.current_index#}}步骤项的生成，严格只进行这一步骤的工作。
+
+
+              <todo>{{#conversation.todo#}}</todo>
+
+
+              搜索我提供的提示词：{{#sys.query#}}
+
+              中文输出，不进行跳出'
+          maximum_iterations:
+            type: constant
+            value: 15
+          model:
+            type: constant
+            value:
+              completion_params: {}
+              mode: chat
+              model: Kimi-K2
+              model_type: llm
+              provider: langgenius/volcengine_maas/volcengine_maas
+              type: model-selector
+          query:
+            type: constant
+            value: '用户的原始意图：{{#sys.query#}}
+
+              '
+          tools:
+            type: constant
+            value:
+            - enabled: true
+              extra:
+                description: 一个用于执行 Google 搜索并提取片段和网页的工具。输入应该是一个搜索查询。
+              parameters:
+                query:
+                  auto: 1
+                  value: null
+              provider_name: langgenius/serper/serper
+              schemas:
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: used for searching
+                  ja_JP: used for searching
+                  pt_BR: used for searching
+                  zh_Hans: 用于搜索网页内容
+                label:
+                  en_US: Query string
+                  ja_JP: Query string
+                  pt_BR: Query string
+                  zh_Hans: 查询语句
+                llm_description: key words for searching
+                max: null
+                min: null
+                name: query
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: string
+              settings: {}
+              tool_description: 一个用于执行 Google 搜索并提取片段和网页的工具。输入应该是一个搜索查询。
+              tool_label: Serper
+              tool_name: serper
+              type: builtin
+        agent_strategy_label: FunctionCalling
+        agent_strategy_name: function_calling
+        agent_strategy_provider_name: langgenius/agent/agent
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1751521969205'
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          window:
+            enabled: true
+            size: 5
+        output_schema: null
+        plugin_unique_identifier: langgenius/agent:0.0.19@3850c37e0f04f6ff6f00641fc36ed1d11555b0222470c37aa715218a4c5c95fd
+        selected: false
+        title: Agent
+        type: agent
+      height: 198
+      id: '1751540914112'
+      parentId: '1751521969205'
+      position:
+        x: 366.11646572423956
+        y: 238.17473924295302
+      positionAbsolute:
+        x: 1672.1262242488235
+        y: 1499.913425985672
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    viewport:
+      x: -43.83401807030123
+      y: 27.202504878488696
+      zoom: 0.29771421234124246
